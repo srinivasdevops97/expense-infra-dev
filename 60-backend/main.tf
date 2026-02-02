@@ -47,3 +47,30 @@ resource "null_resource" "backend" {
     ]
   }
 }
+
+# stops the backend instance
+resource "aws_ec2_instance_state" "backend" {
+  instance_id = module.backend.id
+  state       = "stopped"
+  depends_on = [null_resource.backend]
+}
+
+# Takes the AMI from the backend instance
+resource "aws_ami_from_instance" "backend" {
+  name               = local.resource_name
+  source_instance_id = module.backend.id
+  depends_on = [aws_ec2_instance_state.backend]
+}
+
+# delete the backend instance after taking the AMI
+resource "null_resource" "backend-delete" {
+  # Changes to any instance of the cluster requires re-provisioning
+  triggers = {
+    instance_id = module.backend.id
+  }
+
+  provisioner "local-exec" {
+      command = "aws ec2 terminate-instances --instance-ids ${module.backend.id}"
+  }
+  depends_on = [aws_ami_from_instance.backend]
+}
