@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# component = $1
-# environment = $2
+component = $1
+environment = $2
 component="${var.component}"
 environment="${var.environment}"
 echo "component: $component, environment: $environment"
