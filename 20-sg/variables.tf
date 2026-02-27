@@ -49,3 +49,9 @@ variable "app_alb_sg_tags" {
         compenent = "app-alb"
     }
 }
+
+variable "web_alb_sg_tags" {
+    default = {
+        compenent = "web-alb"
+    }
+}
