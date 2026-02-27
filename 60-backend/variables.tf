@@ -20,6 +20,10 @@ variable "backend_tags" {
     }
 }
 
+variable "zone_name" {
+    default = "srinivas.fun"
+}
+
 # variable "ami_id" {
 #     default = "ami-058fbc284998614e2"
 # }
