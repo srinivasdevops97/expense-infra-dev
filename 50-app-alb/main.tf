@@ -56,16 +56,3 @@ module "records" {
   }
 }
 
-# # Use this resource to create record using resource
-# # if you use this resource, you should uncomment existing data block in data.tf
-# resource "aws_route53_record" "app_alb" {
-#   zone_id = data.aws_route53_zone.existing.zone_id
-#   name    = "*.app-${var.environment}"
-#   type    = "A"
-
-#   alias {
-#     name                   = module.app_alb.dns_name
-#     zone_id                = module.app_alb.zone_id
-#     evaluate_target_health = true
-#   }
-# }
