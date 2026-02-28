@@ -69,7 +69,7 @@ module "records" {
   name = var.zone_name
   records = {
     mysql = {
-      name    = "mysql-${var.environment}"  # mysql-dev.srinivas.fun
+      name    = "mysql-${var.environment}"  # mysql-dev.srinivas.sbs
       type    = "CNAME"
       ttl     = 1
       records = [module.db.db_instance_address]

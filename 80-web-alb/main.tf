@@ -55,7 +55,7 @@ resource "aws_lb_listener" "https" {
 module "records" {
   source = "terraform-aws-modules/route53/aws"
   create_zone = false
-  name = var.zone_name  # srinivas.fun
+  name = var.zone_name  # srinivas.sbs
     
   records = {
     lb_app = {

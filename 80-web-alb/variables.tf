@@ -15,7 +15,7 @@ variable "common_tags" {
 }
 
 variable "zone_name" {
-    default = "srinivas.fun"
+    default = "srinivas.sbs"
 }
 
 variable "web_alb_tags" {

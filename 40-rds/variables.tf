@@ -21,5 +21,5 @@ variable "rds_tags" {
 }
 
 variable "zone_name" {
-    default = "srinivas.fun"
+    default = "srinivas.sbs"
 }

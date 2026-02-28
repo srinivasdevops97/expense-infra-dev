@@ -15,6 +15,6 @@ data "aws_ssm_parameter" "https_certificate_arn" {
 }
 
 # data "aws_route53_zone" "existing" {
-#   name         = "srinivas.fun"
+#   name         = "srinivas.sbs"
 #   private_zone = false
 # }

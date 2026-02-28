@@ -11,6 +11,6 @@ data "aws_ssm_parameter" "app_alb_sg_id" {
 }
 
 # data "aws_route53_zone" "existing" {
-#   name         = "srinivas.fun"
+#   name         = "srinivas.sbs"
 #   private_zone = false
 # }
