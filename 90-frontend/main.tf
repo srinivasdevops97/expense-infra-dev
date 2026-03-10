@@ -112,12 +112,6 @@ resource "aws_launch_template" "frontend" {
   }
 }
 
-# Creating Auto-Scaling group
-resource "aws_placement_group" "test" {
-  name     = "test"
-  strategy = "cluster"
-}
-
 resource "aws_autoscaling_group" "frontend" {
   name                      = local.resource_name
   max_size                  = 10
@@ -133,7 +127,7 @@ resource "aws_autoscaling_group" "frontend" {
       version = "$Latest"
     }
 
-  vpc_zone_identifier       = [local.private_subnet_id]
+  vpc_zone_identifier       = [local.public_subnet_id]
 
   instance_refresh {
     strategy = "Rolling"

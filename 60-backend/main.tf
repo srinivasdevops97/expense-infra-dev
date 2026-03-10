@@ -112,12 +112,6 @@ resource "aws_launch_template" "backend" {
   }
 }
 
-# Creating Auto-Scaling group
-resource "aws_placement_group" "test" {
-  name     = "test"
-  strategy = "cluster"
-}
-
 resource "aws_autoscaling_group" "backend" {
   name                      = local.resource_name
   max_size                  = 10
